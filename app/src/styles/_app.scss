@@ -1,27 +1,33 @@
+/* Default variables */
+:root {
+  --link-color: hotpink;
+}
+
+[data-theme^="light"],
+[data-theme] [data-theme^="light"] {
+  --main-color: #000;
+  --background-color: #fff;
+}
+
+[data-theme^="dark"],
+[data-theme] [data-theme^="dark"],
+[data-theme="light-dark-sidebar"] nav {
+  --main-color: #fff;
+  --background-color: #000;
+}
 
 body {
-  font-family: $fontStd;
-  padding: 50px;
-  background-color: white;
+  color: var(--main-color);
+  font-family: sans-serif;
+  background-color: var(--background-color);
+  display: flex;
   -webkit-app-region: drag;
 }
 
-section {
-  border-top: 2px solid #ccc;
-  margin-bottom: 40px;
+a {
+  color: var(--link-color);
 }
 
-.test-img {
-  width: 100px;
-  height: 100px;
-}
-
-.test-bg-img {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-.test-external-bg-img {
-  background-image: url('../assets/image.png');
+main {
+  margin-left: 1em;
 }
