@@ -1,0 +1,86 @@
+{
+  "name": "electron-react",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Rogatnev Nikita",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogatnev-nikita/electron-react.git"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "main": "app/main.js",
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "clean": "node ./scripts/clean -spm",
+    "clear-packages": "node ./scripts/clean.js -p",
+    "dev": "node ./scripts/build.js -w",
+    "enable-scripts": "node ./scripts/clean -s",
+    "package": "node ./scripts/package.js --target=mac",
+    "package:win": "node ./scripts/package.js --target=win",
+    "reinstall": "node ./scripts/clean.js -m",
+    "start": "node ./scripts/start.js"
+  },
+  "config": {
+    "pathBuild": "app/build",
+    "pathOutput": "packages",
+    "targets": {
+      "mac": {
+        "platform": "darwin",
+        "arch": "x64",
+        "icon": "app/resources/app-icon.icns"
+      },
+      "win": {
+        "platform": "win32",
+        "arch": "x64",
+        "icon": "app/resources/app-icon.ico",
+        "envPath": "/Applications/Wine Stable.app/Contents/Resources/start/bin:/Applications/Wine Stable.app/Contents/Resources/wine/bin"
+      }
+    },
+    "zipPackage": false
+  },
+  "devDependencies": {
+    "ajv": "^6.10.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.0.0",
+    "electron": "^5.0.6",
+    "electron-packager": "^14.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "favicons-webpack-plugin": "0.0.9",
+    "file-loader": "^4.0.0",
+    "fs-extra": "^8.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "log-box": "^0.4.3",
+    "minimist": "^1.2.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "electron-reload": "^1.4.0",
+    "lodash": "^4.17.11"
+  },
+  "log-box": {
+    "default": {
+      "style": "round",
+      "color": "#9f0",
+      "textColor": "#9f0",
+      "margin": {
+        "top": 1,
+        "bottom": 2
+      }
+    }
+  }
+}
