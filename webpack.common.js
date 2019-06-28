@@ -70,7 +70,6 @@ module.exports = {
                     name: 'resources/video/[name].[ext]'
                 }
             },
-
         ]
     },
 

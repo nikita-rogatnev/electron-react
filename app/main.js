@@ -18,7 +18,8 @@ app.on('ready', () => {
         frame: false,
         titleBarStyle: 'hiddenInset',
         backgroundColor: '#ffffff',
-        fullscreenable: true
+        fullscreenable: true,
+        screenPosition: 'mobile'
     });
 
     win.loadURL(`file://${pathBuild}/index.html`);

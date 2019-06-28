@@ -1,31 +1,35 @@
 import React from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import Highlight from '@material-ui/icons/Highlight';
 
 class App extends React.Component {
-    componentDidMount() {
-        document.documentElement.setAttribute(
-            'data-theme',
-            localStorage.theme || 'dark'
-        );
+    constructor(props) {
+        super(props);
 
-        let html = document.documentElement;
-
-        document.addEventListener('click', (e) => {
-            let {target} = e;
-            let newTheme = target.getAttribute('data-set-theme');
-
-            if (newTheme) {
-                html.setAttribute('data-theme', newTheme);
-                localStorage.theme = newTheme
-            }
-        })
+        this.state = {
+            theme: localStorage.theme || 'dark',
+        }
     }
+
+    switchTheme = () => {
+        const themeCurrent = this.state.theme;
+        const themeUpdated = themeCurrent === `dark` ? `light` : `dark`;
+
+        this.setState({theme: themeUpdated});
+        localStorage.theme = themeUpdated;
+    };
 
     render() {
         return (
-            <section className="app">
-                <h1>Electron React</h1>
-                <button data-set-theme="dark">Dark</button>
-                <button data-set-theme="light">Light</button>
+            <section className="app" data-theme={this.state.theme}>
+                <h1>Electron React {this.state.theme}</h1>
+
+                <IconButton
+                    aria-label="Switch theme"
+                    onClick={this.switchTheme}
+                >
+                    <Highlight/>
+                </IconButton>
             </section>
         );
     }
