@@ -1,9 +1,3 @@
-# Modules
-node_modules/
-
-# OS
-.DS_Store
-
-# Project-specific
-app/build/
-packages/
+node_modules
+package-lock.json
+app/build
