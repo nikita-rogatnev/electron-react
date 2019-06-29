@@ -5,7 +5,7 @@ const ENV = process.env.NODE_ENV || 'development';
 module.exports = {
     watch: ENV === 'development',
     target: 'electron-renderer',
-    entry: './app/src/renderer_process.js',
+    entry: './app/src/render.js',
     output: {
         path: __dirname + '/app/build',
         publicPath: 'build/',
